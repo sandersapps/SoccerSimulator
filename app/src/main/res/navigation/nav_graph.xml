@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/teamsOverview">
+
+    <fragment
+        android:id="@+id/teamsOverview"
+        android:name="com.sander.soccersimulator.ui.teams.TeamsFragment"
+        android:label="fragment_teams_overview"
+        tools:layout="@layout/fragment_teams" >
+        <action
+            android:id="@+id/action_teamsOverview_to_matchFragment"
+            app:destination="@id/matchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/poolFragment"
+        android:name="com.sander.soccersimulator.ui.pool.PoolFragment"
+        android:label="fragment_pool"
+        tools:layout="@layout/fragment_pool" />
+    <fragment
+        android:id="@+id/matchFragment"
+        android:name="com.sander.soccersimulator.ui.match.MatchFragment"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match" >
+        <action
+            android:id="@+id/action_matchFragment_to_poolFragment"
+            app:destination="@id/poolFragment" />
+    </fragment>
+</navigation>
